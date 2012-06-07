@@ -48,8 +48,9 @@ gem 'unicorn'
 gem "capybara", :group => [:development, :test]
 
 group :test do
+  gem "minitest"
+  gem "turn"
   gem "cucumber-rails", :require => false
-  gem "capybara"
   gem "database_cleaner"
   gem 'fivemat'
   gem 'powder'
