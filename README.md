@@ -85,7 +85,7 @@ To list stories from Pivotal Tracker at the command line and subsequently start 
 
 To leverage this powerful rake task, you'll need to add the Tracker project details to your `~/.gitconfig` file (or create this file if it doesn't exist):
 
-    $ vim ~/.gitignore
+    $ vim ~/.gitconfig
 
 Add the following anywhere in the file:
 
