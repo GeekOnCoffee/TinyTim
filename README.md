@@ -20,7 +20,7 @@ To work on a feature of TinyTim please ensure you use the proper version of Ruby
 We recommend leveraging RVM to help with versioning Ruby on your machine and will help support developer environments utilizing that technology. We also recommend that you keep TinyTim's gems in an RVM gemset. You can read more about [installing RVM](https://rvm.io/rvm/install/), [RVM gemsets](https://rvm.io/gemsets/basics/), and the [.rvmrc](https://rvm.io/workflow/rvmrc/) if those concepts are foreign to you.
 
 ###Git Flow
-Install [git-flow](https://github.com/nvie/gitflow) on your machine and initialize your local git repo of TinyTim with the default git-flow options by passing the -d flag to `git flow init`). Note: it is required to run `git flow init` on each local dev repository as it acts on your files locally.
+Install [git-flow](https://github.com/nvie/gitflow) on your machine and initialize your local git repo of TinyTim with the default git-flow options by passing the -d flag to `git flow init`. Note: it is required to run `git flow init` on each local dev repository as it acts on your files locally.
 
         $ brew install git-flow
         $ git flow init -d                                                                                                             
@@ -58,7 +58,7 @@ Install [git-flow](https://github.com/nvie/gitflow) on your machine and initiali
 We use [Pivotal Tracker](http://pivotaltracker.com) to keep track of who is doing what and our project is located at: [pivotaltracker.com/projects/569717](https://www.pivotaltracker.com/projects/569717). Please ensure all features have a story in Tracker to track them (hopefully creating the Tracker story before starting to code) so the whole group can follow along with commits and comments, etc.
 
 ### Attaching Commits To Stories
-The Tracker project has been setup with a post commit hook for the main repository. When your pull request is merged the commits will show up attached to any Tracker story that was referenced. 
+The Tracker project has been setup with a post commit service hook for the main repository. If you followed along with the Contributing section above, hopefully your fork has a service hook setup too. When you push your feature up to your fork the commits will show up attached to any Tracker story that was referenced. 
 
 Here are some example commit messages that would link the commit to it's corresponding Tracker story:
 
@@ -118,11 +118,13 @@ In order to leverage these automatic features of git\_tracker, each dev must exe
 
     $ git-tracker install
 
+You must also add the post-checkout hook described at the end of this guide.
+
 
 ## Coding Style
 
 ### Github Style Guide
-Please refer to the [Github Ruby Styleguide](https://github.com/styleguide/ruby) for how code should be formatted. Of utmost importance are the first three "suggestions":
+Please refer to the [Github Ruby Styleguide](https://github.com/styleguide/ruby) for how code should be generally formatted. We won't flog you if your code doesn't exactly conform to the styleguide, but please try to follow it as cosely as possible. Of utmost importance are the first three "suggestions":
 
 * Use soft-tabs with a two space indent.
 * Keep lines fewer than 80 characters.
