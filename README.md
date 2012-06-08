@@ -20,19 +20,17 @@ To work on a feature of TinyTim please ensure you use the proper version of Ruby
 We recommend leveraging RVM to help with versioning Ruby on your machine and will help support developer environments utilizing that technology. We also recommend that you keep TinyTim's gems in an RVM gemset. You can read more about [installing RVM](https://rvm.io/rvm/install/), [RVM gemsets](https://rvm.io/gemsets/basics/), and the [.rvmrc](https://rvm.io/workflow/rvmrc/) if those concepts are foreign to you.
 
 ###Git Flow
-Install [git-flow](https://github.com/nvie/gitflow) on your machine and initialize your local git repo of TinyTim with the default git-flow options by passing the -d flag to `git flow init`). Note: it is required to run `git flow init` on each local dev repository as it acts on your files locally.
+Install [git-flow](https://github.com/nvie/gitflow) on your machine and initialize your local git repo of TinyTim with the default git-flow options by passing the -d flag to `git flow init`. Note: it is required to run `git flow init` on each local dev repository as it acts on your files locally.
 
         $ brew install git-flow
         $ git flow init -d                                                                                                             
 
 ## Contributing
 1. Fork the project to your own personal Github account (using the Github interface is probably easiest for this step) and clone it locally to your dev machine **using the SSH url**.
-
     * Add a service hook from your individual fork of TinyTim to the Tracker project so that your commits will be visible in the stories before the pull requests are merged.
         - Click the "Admin" tab on your fork
         - Then click "Service Hooks" on the left menu
         - Then find 'PivotalTracker' in the list and click it, then scroll up to the top and add your Tracker Token from your [profile](https://www.pivotaltracker.com/profile) page.
-
 1. Pull the latest code from the upstream master branch of the main project. Github has some [help on this topic](https://help.github.com/articles/fork-a-repo).
 
         $ git remote add upstream https://github.com/GreenBayRUG/TinyTim.git
@@ -40,24 +38,19 @@ Install [git-flow](https://github.com/nvie/gitflow) on your machine and initiali
         $ git merge --no-ff upstream/master
 
 1. Add a new feature story in Pivotal Tracker. 
-
     * The story name should be the feature name
     * The story description should contain a well formed Cucumber feature and at least one scenario. 
         - Additional scenarios could be handled as tasks in the story itself, or if it's a particularly large feature, perhaps leverage an [Epic](https://www.pivotaltracker.com/help#howcanmyteamplanandkeeptrackofbigfeaturesatahighlevel) by naming the Epic as the feature name and creating multiple stories inside it with the scenario description as the story name.
         - Always include the original feature definition when breaking apart a feature with multiple scenarios so that the context of the over-arching feature is preserved.
-
 1. Create a new feature branch from your newly updated master branch utilizing [git-flow](https://github.com/nvie/gitflow): 
 
         $ git flow feature start my_cool_feature_12345678
-
     * Ensuring that the feature or bugfix has the story number appended will invoke [git\_tracker](https://github.com/highgroove/git_tracker) (once we properly configure it later) which will take care of including the story number in the commit message. We'll see later in the Pivotal Tracker section how we can create a feature directly from a Tracker story with our custom pivotal\_tracker.rake file without ever having to type the feature name or look up the story ID!
-
 1. Code your awesome feature, committing early and often with [descriptive commit messages](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) ensuring:
     * The 'subject' (aka first line) is only 50 chars long.
     * The subject is of present tense.
     * Additional details are included in the commit message body when appropriate.
     * There is an empty line between the subject and the rest of the commit body.
-
 1. Submit your new feature as a pull request to the main project so we can review and merge your code during the next meetup!!!
 
 
@@ -65,7 +58,7 @@ Install [git-flow](https://github.com/nvie/gitflow) on your machine and initiali
 We use [Pivotal Tracker](http://pivotaltracker.com) to keep track of who is doing what and our project is located at: [pivotaltracker.com/projects/569717](https://www.pivotaltracker.com/projects/569717). Please ensure all features have a story in Tracker to track them (hopefully creating the Tracker story before starting to code) so the whole group can follow along with commits and comments, etc.
 
 ### Attaching Commits To Stories
-The Tracker project has been setup with a post commit hook for the main repository. When your pull request is merged the commits will show up attached to any Tracker story that was referenced. 
+The Tracker project has been setup with a post commit service hook for the main repository. If you followed along with the Contributing section above, hopefully your fork has a service hook setup too. When you push your feature up to your fork the commits will show up attached to any Tracker story that was referenced. 
 
 Here are some example commit messages that would link the commit to it's corresponding Tracker story:
 
@@ -125,11 +118,13 @@ In order to leverage these automatic features of git\_tracker, each dev must exe
 
     $ git-tracker install
 
+You must also add the post-checkout hook described at the end of this guide.
+
 
 ## Coding Style
 
 ### Github Style Guide
-Please refer to the [Github Ruby Styleguide](https://github.com/styleguide/ruby) for how code should be formatted. Of utmost importance are the first three "suggestions":
+Please refer to the [Github Ruby Styleguide](https://github.com/styleguide/ruby) for how code should be generally formatted. We won't flog you if your code doesn't exactly conform to the styleguide, but please try to follow it as cosely as possible. Of utmost importance are the first three "suggestions":
 
 * Use soft-tabs with a two space indent.
 * Keep lines fewer than 80 characters.
