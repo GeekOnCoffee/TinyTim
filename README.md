@@ -28,6 +28,11 @@ Install [git-flow](https://github.com/nvie/gitflow) on your machine and initiali
 ## Contributing
 1. Fork the project to your own personal Github account (using the Github interface is probably easiest for this step) and clone it locally to your dev machine **using the SSH url**.
 
+    * Add a service hook from your individual fork of TinyTim to the Tracker project so that your commits will be visible in the stories before the pull requests are merged.
+        - Click the "Admin" tab on your fork
+        - Then click "Service Hooks" on the left menu
+        - Then find 'PivotalTracker' in the list and click it, then scroll up to the top and add your Tracker Token from your [profile](https://www.pivotaltracker.com/profile) page.
+
 1. Pull the latest code from the upstream master branch of the main project. Github has some [help on this topic](https://help.github.com/articles/fork-a-repo).
 
         $ git remote add upstream https://github.com/GreenBayRUG/TinyTim.git
@@ -163,7 +168,7 @@ This will help keep track of when a comment was made and by whom more easily tha
 
 
 ## Post Checkout Hook
-Add the following to a file located at project_root/.git/hooks/post-checkout
+Add the following to a file located at project\_root/.git/hooks/post-checkout where project\_root is whatever you called the root of the rails app locally on your machine.
     
     #!/usr/bin/env ruby
     require "rubygems"
