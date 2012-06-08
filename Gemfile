@@ -10,7 +10,6 @@ gem 'rails', '3.2.3'
 
 gem 'sqlite3'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -75,9 +74,9 @@ group :development do
     gem 'win32console'
     gem 'rb-notifu' if guard_notifications
   end
-end
 
-group :development do
+  gem 'pivotal-tracker'
+  gem "git_tracker" #auto add comments to pivotal stories with commit messages
   gem "guard-livereload"
   gem "yajl-ruby"
   gem "rack-livereload"
