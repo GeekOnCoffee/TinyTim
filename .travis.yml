@@ -1,0 +1,12 @@
+rvm:
+  - 1.9.3
+  - jruby-19mode
+  - rbx-19mode
+notifications:
+  email:
+    - adhlssu07@gmail.com
+  irc:
+    use_notice: true
+    skip_join: true
+    channels:
+      - "irc.freenode.org#gbrug"
