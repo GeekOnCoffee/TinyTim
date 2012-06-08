@@ -16,3 +16,4 @@
 
 config/database.yml
 public/system
+doc/current_pt_story.txt
