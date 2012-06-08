@@ -1,3 +1,5 @@
+before_script:
+  - "cp database.yml.example database.yml"
 rvm:
   - 1.9.3
   - jruby-19mode
