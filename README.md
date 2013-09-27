@@ -195,3 +195,5 @@ Add the following to a file located at project\_root/.git/hooks/post-checkout wh
 Change the permissions of the file as follows:
 
     $ chmod 755 post-checkout
+
+BOOOOO
