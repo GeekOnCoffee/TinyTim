@@ -1,5 +1,5 @@
-# TinyTim
-No idea where we got the name, but TinyTim is a blog :) The goal of the application is to facilitate learning and exploration in a collaborative setting with a known problem domain, a blog. This _should_ allow all who contribute to explore new technology and/or development techniques without needing to worry about the mental overhead of groking a totally new application concept. 
+# TinyTim 
+No idea where we got the name, but TinyTim is a really cool blog :) The goal of the application is to facilitate learning and exploration in a collaborative setting with a known problem domain, a blog. This _should_ allow all who contribute to explore new technology and/or development techniques without needing to worry about the mental overhead of groking a totally new application concept. 
 
 This application is being coded by the [Green Bay RUG](http://greenbayrug.com) who meets weekly from 12:00pm until 2:00pm CST. The first hour of each meeting will be spent recapping work (reviewing pull requests) that pairs or individuals did during the past week. The second hour will be spent divvying up new features or group/pair/individual coding.
 
